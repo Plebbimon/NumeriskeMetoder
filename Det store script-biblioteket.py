@@ -13,7 +13,7 @@ from scipy.misc import derivative
 
 #|-------------------------------------------|
 
-
+#FUNKSJON
 #Her kan vi definere funksjonen som programmene kjører gjennom!
 def funksjon(x):
     #return (-1)*np.sqrt(x) #Uttrykket fra noen eksamensoppgaver
@@ -22,15 +22,29 @@ def funksjon(x):
 
 #|-------------------------------------------|
 
-
+#FUNKSJON DERIVERT
 def funksjon_derivert(x):
     return derivative(funksjon,x)
 
 
 
+def kjor():
+    numeriske_metoder = [fikspunkt_while, fikspunkt_for,implisitt_for,eksplisitt_for,newtons_metode]
+    n=0
+    for el in numeriske_metoder:
+        print(el,n)
+        n +=1
+    bruker = int(input("Hvilken metode vil du bruke?"))
+    valg = numeriske_metoder[bruker]()
+    
+    return valg
 
 
-#|-------------------------------------------|
+
+
+
+# F U N K S J O N E R   U N D E R   H E R !
+#**********************************************************************************
 
 
 
@@ -85,7 +99,7 @@ def fikspunkt_for(): #Fungerer fint denne her også, men pass på for numpy erro
 
 #|-------------------------------------------|
 
-
+#IMPLISITT METODE | FOR-LØKKE
 def implisitt_for():
     #Forhåndsarbeid for en startverdi og antall iterasoner, samt steg
     y = float(input("Startverdi implisitt metode: "))   #Bruker y fordi implisitt metode er uttrykt ved y(t0)=y0
@@ -105,7 +119,7 @@ def implisitt_for():
 #|-------------------------------------------|
 
 
-
+#EKSPLISITT METODE | WHILE-LØKKE
 def eksplisitt_for():
      #Forhåndsarbeid for en startverdi og antall iterasoner, samt steg
     y = float(input("Startverdi eksplisitt metode: "))   #Bruker y fordi implisitt metode er uttrykt ved y(t0)=y0
@@ -126,7 +140,7 @@ def eksplisitt_for():
 #|-------------------------------------------|
 
 
-
+#NEWTONS METODE
 def newtons_metode():
     x = int(input("Gjett en x: "))
     grense = float(input("Grense (f.eks 0.0001): "))
