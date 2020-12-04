@@ -217,5 +217,5 @@ def riemann():
     return summ #returnerer totalt areal
 
 
-print(riemann())
+#print(riemann())
 
